@@ -1,0 +1,226 @@
+<?php
+if (!isset($data)) {
+    $data = array();
+}
+
+?>
+<html>
+    <head>
+        <title>Rent house in all country in benin</title>
+    <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/css/jasny-bootstrap.css">
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/css/style.css" type="text/css">
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/css/animate.css" type="text/css">
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/fontawesome/css/font-awesome.css" >
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/fontawesome/fonts/font-awesome.less" >
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/fontawesome/fonts/icons.less" >
+    </head>
+    <body>
+
+        <div class="build" align="center">
+            <div class="contain_all">
+                <div class="band_fixe">
+                    <div class="band_profil">
+                        <div class="profil">
+                            <?php foreach ($data as $value): ?>
+                                <img src="../public/image/<?php
+                                if (!empty($value->img_profile)):echo $value->img_profile;
+                                else: echo "default-user-man.png";
+                                endif;
+
+                                ?>" class="img-responsive" alt="profil-tof" width="100%" height="100%">
+                                 <?php endforeach; ?>
+                            <!--div class="nom_profil">
+                                Joezer
+                            </div-->
+                        </div>
+                        <div class="nom_profil">
+                            Joezer
+                        </div>
+                        <div class="bando"> </div>
+                        <div class="menu_group">
+                            <div class="ibox animated fadeInRight">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">RentHouse infos</div>
+                                    <div class="panel-body">
+                                        <ul class="nav nav-stacked" style="text-align: left;">
+                                            <li><a href="work"><i class="fa fa-home"></i>  Poster une maison</a></li>
+                                            <li><a href="work"><i class="fa fa-search-plus"></i>  Rechercher autre </a></li>
+                                            <li><a href="work"><i class="fa fa-street-view"></i>  Business benin</a></li>
+                                            <li><a href="work"><i class="fa fa-bar-chart-o"></i>  Business Ghana</a></li>
+                                            <li><a href="work"><i class="fa fa-street-view"></i>  Business Togo</a></li>
+                                            <li><a href="work"><i class="fa fa-suitcase"></i>  Business Nigeria</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="band_publication">
+                    <div class="band_pub_head_fixe">
+                        <div class="band_pub_head">
+                            <div class="bar_search">
+                                <form>
+                                    <span><input type="text" name=""  class="input" placeholder="searching..."><button type="submit" class="button"><i class="fa fa-search btn-md">Search</i></button></span>
+                                </form>
+                            </div>
+                            <div class="acceuil"><a href="<?php echo $this->url->get('home/index'); ?>" class="lien"><i class="fa fa-home"></i> Acceuil</a></div>
+                            <div class="acceuil">
+                                <select name="" style="background-color: #afd9ee;">
+                                    <option>Benin</option>
+                                    <option>Togo</option>
+                                    <option>Nigeria</option>
+                                    <option>Ghana</option>
+                                    <option>C&ocirc;te d&apos;ivoire</option>
+                                    <option>S&eacute;n&eacute;gale</option>
+
+                                </select>
+
+                            </div>
+                            <div class="bar_logout"><a href="<?php echo $this->url->get('session/index'); ?>" class="lien">Logout</a></div>
+                        </div>
+                    </div>
+
+
+                    <div class="band_pub_contain col-md-10">
+                        <form id="my_form" enctype="multipart/form-data" method="post" action="<?php echo $this->url->get('home/profil'); ?>">
+                            <div class="form-group">
+                                <?php foreach ($data as $value): ?>
+                                    <section class="col-sm-10">
+                                        <div>&nbsp;</div>
+                                        <!--div class="row">
+
+                                            <div class="col-md-8">
+                                                <h5>Mettre &agrave; jour la photo de profil:</h5>
+                                                <div class="col-md-4">
+
+                                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                        <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTkwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9Ijk1IiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE5MHgxNDA8L3RleHQ+PC9zdmc+" alt="...">
+                                                        </div>
+                                                        <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                                                        <div>
+                                                            <span class="btn btn-default btn-file"><span class="fileinput-new">Selectionnez l&apos;image</span><span class="fileinput-exists">Changer</span><input type="file" name="..."></span>
+                                                            <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Supprimer</a>
+                                                        </div>
+                                                    </div>                  
+                                                </div>
+                                            </div>
+                                        </div-->
+                                        <div>&nbsp;</div>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                Nom:
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="nom"  value="<?php echo $value->nom; ?>" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div>&nbsp;</div>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                Prenom:
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="prenom"  value="<?php echo $value->prenom; ?>" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div>&nbsp;</div>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                Pays:
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="pays" value="<?php echo $value->pays; ?>" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <div>&nbsp;</div>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                email:
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="email" value="<?php echo $value->email; ?>" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <div>&nbsp;</div>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                Mot de passe:
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input type="password" name="mdp" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <div>&nbsp;</div>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                Confirmer mot de passe:
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input type="password" name="cmdp" class="form-control" ></textarea>
+                                            </div>
+                                        </div>
+                                        <div>&nbsp;</div>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                &nbsp;
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <button type="submit" name="" class="btn btn-primary btn-sm">Save</button>
+                                            </div>
+                                        </div>
+
+                                    </section>
+                                
+                                    <section class="col-sm-2">
+                                        <div>&nbsp;</div>
+                                        <div class="row">
+
+                                            <div class="col-md-8">
+                                                <div class="col-md-4">
+
+                                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                        <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                            <img src="../public/image/<?= $value->img_profile; ?>"  alt="profil">
+                                                        </div>
+                                                        <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                                                        <div>
+                                                            <span class="btn btn-default btn-file"><span class="fileinput-new">Selectionnez l&apos;image</span><span class="fileinput-exists">Changer</span><input type="file" name="..."></span>
+                                                            <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Supprimer</a>
+                                                        </div>
+                                                    </div>                  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    
+                                
+                                <?php endforeach; ?>
+                            </div>
+
+
+                            <div class="col-md-12">
+                                <?php if (sizeof($this->flashSession->getMessages(NULL, false)) > 0): ?>
+                                    <div><p><?php $this->flashSession->output() ?></p></div>
+                                <?php endif; ?>
+                            </div>
+
+                        </form>   
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </body>
+</html>
+<script src="../<?php $this->url->getBaseUri(); ?>public/js/jquery.js"></script>
+<script  src="../<?php $this->url->getBaseUri(); ?>public/js/bootstrap.min.js"></script>
+<script src="../<?php $this->url->getBaseUri(); ?>public/js/fileinput.js"></script>

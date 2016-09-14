@@ -1,0 +1,140 @@
+<html>
+    <head>
+        <title>Rent house in all country in benin</title>
+        <script  type="text/javascript" src="<?php echo $this->url->getBaseUri(); ?>public/js/bootstrap.min.js"></script>
+    </head>
+    <link rel="stylesheet" href="<?php echo $this->url->getBaseUri(); ?>public/css/animate.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $this->url->getBaseUri(); ?>public/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $this->url->getBaseUri(); ?>public/css/style.css" type="text/css">
+    <body class="body_authentificate">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-offset-0 col-sm-12 entete">
+                    <div class="row">
+                        <form method="post" action="<?php echo $this->url->get('session/login'); ?>">
+                            <div class="col-sm-3 title_name"><i class="fa fa-home"></i>RentHouse</div>
+                            <div class="col-sm-7 col-sm-offset-2">
+                                <div class="email_head">
+                                    <span><font color='#ffffff'>Adresse email</font> <input type="text" name="mail"></span>
+                                    <span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+                                    <span><font color='#ffffff'>Mot de passe</font> <input type="password" name="pwd"></span>
+                                    <span>&nbsp;</span>
+                                    <span><input type="submit" name="su1" value="Connect" class="btn-primary btn-sm"></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div>&nbsp;</div>
+            <div class="row">
+
+                <div class="col-md-12 block_auth">
+                    <div class="col-md-12">
+                        <?php if (sizeof($this->flashSession->getMessages(NULL, false)) > 0): ?>
+                            <div><p><?php $this->flashSession->output() ?></p></div>
+                        <?php endif; ?>
+                    </div>
+                    <form method="post" action="<?php echo $this->url->get('session/save'); ?>">
+                        <div class="col-md-offset-6 col-md-5">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">Cr&eacute;er votre compte</div>
+                                <div class="row">&nbsp;</div>
+                                <div class="save"> 
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <font color=''> Nom:</font>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" name="nom" class="form-control">
+                                    </div>
+                                </div>
+                                <div>&nbsp;</div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <font color=''> Prenom:</font>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" name= "prenom" class="form-control">
+                                    </div>
+                                </div>
+                                <div>&nbsp;</div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <font color=''> Sexe:</font>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <select class="form-control" name="sexe">
+                                            <option value="M">Masculin</option>
+                                            <option value="F">Feminin</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>&nbsp;</div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <font color=''> Pays:</font>
+                                    </div>
+                                    <div class="col-md-8">
+                                         <select class="form-control" name="pays">
+                                             <option>B&eacute;nin</option>
+                                            <option>Togo</option>
+                                            <option>Ghana</option>
+                                            <option>Nigeria</option>
+                                            <option>Côte d&apos;ivoire</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>&nbsp;</div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <font color=''> Email:</font>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="email">
+                                    </div>
+                                </div>
+                                <div>&nbsp;</div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <font color=''>Password:</font>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="password" class="form-control" name="pwd">
+                                    </div>
+                                </div>
+                                <div>&nbsp;</div>
+                                <div class="row">
+                                    <div class="col-md-4">
+
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="submit" name="sus" class="btn-primary btn-sm" value="Enregistrer">
+                                    </div>
+
+                                </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+                <!--a href="home">home  ici</a-->
+                <!--div class="col-lg-12 bar_foot">
+                    <div class="col-lg-4 col-lg-offset-7 foot">
+                        Copyright(@) tous droit reserv&eacute; 2015-2016
+                    </div>
+                </div-->
+
+
+            </div>
+
+
+
+    </body>
+
+
+
+</html>

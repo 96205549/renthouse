@@ -1,0 +1,422 @@
+body{
+    background-color:cornsilk;
+    margin:0px;
+}
+.body_authentificate{
+    background-image: url(../../public/image/authpict.jpg)
+}
+.block_auth{
+    margin-top: 35px;
+}
+.title_name{
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 22px;
+    font-family: cursive;
+   
+}
+.build{
+    margin: auto;
+    width:auto;
+    background-color:cornsilk;
+}
+.contain_all{
+    width:1200px;
+    background-color: transparent;
+}
+.band_head{
+    width: auto;
+    height:80px;
+    background-color:dimgray;
+    color:#ffffff;
+
+}
+.logo{
+    float: left;
+    width:90px;
+    height:80px; 
+}
+.login{
+    float: right;
+    margin-top:20px;
+    margin-right:10px;
+}
+.band_body{
+    margin-top: 20px;
+    width:auto;
+    height:500px;
+
+}
+.rent_picture{
+    float: left;
+    width:600px;
+    height:440px;
+    background-color: #f9f2f4;
+}
+.rent_subscrite{ 
+    float: left;
+    width:600px;
+    height:500px;   
+}
+.subs_form{
+    margin-top:60px;
+    margin-left:85px; 
+}
+.band_profil{
+    width: 250px;
+    height:700px;
+    float:left;
+      background-color: #269abc;
+}
+.profil{
+    width: 60px;
+    height: 60px;
+    background-color:   #269abc;
+    margin-top: 15px;
+    border-bottom-left-radius:50px; 
+    border-bottom-right-radius:50px;
+    border-top-left-radius:50px; 
+    border-top-right-radius:50px; 
+    overflow: hidden;
+}
+.band_fixe{
+    width: 250px;
+    height:700px;
+    float:left;
+    padding:0px; 
+    position: fixed;
+}
+.band_publication{
+    width: 950px;
+    float: left;
+    margin-left: 250px;
+    background-color: #ffffff;
+}
+.nom_profil{
+    width: auto;
+    height: 20px;
+    color: #ffffff;
+    background-color:transparent;
+    margin-top: 3px;
+}
+.bando{
+    width: auto;
+    height: 10px;
+    background-color:cornsilk;
+    margin-top: 3px;
+}
+.lien{
+    color:#d9edf7;
+
+    text-decoration:none;
+
+}
+.lienpro{
+    color:#269abc;
+    font-size: 13px;
+    text-decoration:none;
+
+}
+.lien:hover{
+    color:#204d74;
+    text-decoration:none; 
+
+}
+
+.menu{
+    width: auto;
+    height: 20px;
+    margin-top: 10px;
+    margin-left:10px;
+    margin-right:10px;
+    text-align: justify;
+    /*    text-align: justify;*/
+    font-family: inherit;
+    /* background-color:#204d74*/
+}
+.menu:hover{
+    background-color:#ffffff;
+
+}
+.menu_group{
+    width: 250px;
+    height: 800px;
+    background-color: #ffffff;
+}
+.band_pub_head_fixe{
+    margin: 0px;
+    width: 950px;
+    height: 40px;
+    position: fixed;
+
+}
+.band_pub_head{
+    margin: 0px;
+    width: 950px;
+    height: 42px;
+    background-color:#269abc;
+}
+.band_pub_contain{
+    margin-top: 40px;
+    width: 550px;
+    float: left;
+}
+.bar_search{
+    float: left;
+    margin-left: 50px;
+    margin-top: 10px;
+    width: 300px;
+    height: 25px;
+    /*    background-color: #ffffff;*/
+}
+.bar_logout{
+    float:right;
+    width: auto;
+    margin-top: 13px;
+    margin-right:10px;
+
+    /*    background-color: #ffffff;*/
+}
+.input{
+    width: 230px;
+    height: 24px;
+}
+.button{
+    height: 24px;
+}
+.contenu_a{
+    float: left;
+    width: 550px;
+    height: 350px;
+    /*    height: 300px;*/
+    margin: 20px;
+    border:1px;
+    border-color: #23527c;
+    /*    background-color:gainsboro;*/
+    background-color:#ccc;
+}
+.proprio_pub{
+    width: 550px;
+    height: 50px;
+    background-color: #ffffff;
+}
+.im_pro{
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    background-color: #080808;
+}
+.lien_pro{
+    float: left;
+    margin: 3px;
+    text-align: justify;
+    font-size: 12px;
+    font-family:inherit;
+    color: #adadad;
+}
+.comment{
+    margin-left:20px;
+    margin-top:5px;
+    width: 550px;
+    height: auto;
+    background-color: #ffffff;;
+    float: left;
+}
+.tof_commentetor{
+    width: 50px;
+    height: 40px;
+    float: left; 
+    background-color: #ffffff;
+}
+.comment_tof{
+    width: 495px;
+    height: 35px;
+}
+.text_commentetor{
+    margin-top:2px;
+    height: auto;
+    width: auto;
+
+}
+
+.album{
+    float: left;
+    margin:1px;
+    width: 104px;
+    height: 104px;
+    background-color: #ffffff;
+}
+.contenu_ina{
+    float: left;
+    width:320px;
+    height: 300px;
+    /*  background-color: #23527c;*/
+}
+.contenu_inb{
+    float: left;
+    width:230px;
+    height: 300px;
+    /*    background-color: #2b542c;*/
+}
+.contenu_inb1{
+    margin: 1px;
+    width: 226px;
+    height: 145px;
+    background-color: #ffffff;
+}
+.description{
+    float: left;
+    margin:1px;
+    width: 317px;
+    height: 187px;
+    /*    background-color:#ffffff;*/
+}
+.titre{
+    margin-top: 5px;
+    width: auto;
+    height:25px;
+    background-color: #ffffff;
+    color: #245269;
+    text-align: justify;
+}
+.titr_lien{
+    margin-left: 20px;
+    color: #23527c;
+}
+.acceuil{
+    float: left;
+    width: auto;
+    margin-top: 13px;
+    margin-left:80px;
+
+}
+.texte{
+    padding-top: 1px;
+    background-color: #ffffff;
+    text-align: justify;
+    width: auto;
+    height: 155px;
+    font-size: 13px;
+    font-family:inherit;
+    color:#444
+}
+.band_left_pub_fixed{
+    float: right;
+    width: 350px;
+    height: auto;
+
+}
+.band_left_pub_fixed{
+    float: right;
+    width: 350px;
+    height: auto;
+    margin-top:50px;
+    
+  
+}
+.espace_pub_titre{
+    width: 350px;
+    height: 30px;
+    background-color: tomato;
+    color: #ffffff;
+    font-size: 14px;
+}
+.pub{
+    margin:1px;
+    width: 348px;
+    height: auto;
+    background-color:  #ffffff;
+}
+.entete{
+    background-color:#269abc;
+}
+.email_head{
+    padding:15px;
+}
+.bar_foot{
+    padding: 25px;
+    background-color: #204d74;
+    color: #ffffff;   
+}
+
+.cadre_produit_publication{
+    width: auto;
+    margin-top: 5px;
+    height: 50px;
+    border: 1px #adadad;
+    
+    /*background-color: gainsboro;*/
+}
+.img_produit{
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    overflow: hidden;
+    clip: auto;
+    float: left;
+}
+.detail_produit{
+    cursor: pointer;
+    width: auto;
+    padding: 3px;
+    height: 50px;
+    text-align: left;
+    font-size: 10px;
+    text-justify: initial;
+    overflow: hidden;  
+}
+.save{
+   /* background-color: #080808;*/
+    height: 400px;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+/*nouvelle intégration*/
+.titre-unique{
+    width:550px;
+}
+.cadre_unique{
+    width: 550px;
+    height: 300px;
+   /* background-color: skyblue;*/
+}
+.descriptionAll{
+    width: 550px;
+    height: auto;
+    font-size: 13px;
+    text-align: left;
+    margin-top:3px; 
+    background-color: #ffffff;
+    color: #444;
+}
+.cadreshowpublication{
+    float: left;
+    width: 550px;
+    height: auto;
+    /*height: 350px;
+    /*    height: 300px;*/
+    margin: 20px;
+    border:1px;
+    border-color:#eee; /*#23527c;*/
+    /*background-color:#ccc;*/
+}
+.bloc1{
+    width: 273px;
+    height: 296px;;
+    float: left;
+    /*background-color: #4cae4c;*/
+    margin:1px;
+    overflow:hidden;
+}
+.tweece{
+    width: auto;
+    height: 148px;
+    margin: 1px;
+    overflow:hidden;
+    /*background-color: #710909;*/
+}

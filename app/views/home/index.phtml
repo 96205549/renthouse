@@ -1,0 +1,643 @@
+<?php
+if (!isset($data)) {
+    $data = array();
+}
+if (!isset($house)) {
+    $house = array();
+}
+if (!isset($data_pub)) {
+    $data_pub = array();
+}
+
+?>
+<html>
+    <head>
+        <!--meta http-equiv="Refresh" content="30; url=index"--->
+        <title>Rent house in all country in benin</title>
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/css/style.css" type="text/css">
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/css/animate.css" type="text/css">
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/fontawesome/css/font-awesome.css" >
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/fontawesome/fonts/font-awesome.less" >
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/fontawesome/fonts/icons.less" >
+        <!--link rel="stylesheet" href="../<?php //$this->url->getBaseUri();                ?>public/css/style.min.css" -->
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/fontawesome/css/font-awesome.min.css" >
+
+        <!--ajout du code pour le popup--> 
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/popup/css/font-awesome.min.css">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/popup/css/bootstrap.min.css">
+
+        <!-- Plugin CSS -->
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/popup/css/magnific-popup.css">
+        <!-- App CSS -->
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/popup/css/mvpready-admin.css">
+
+
+    <html>
+        <head>
+            <script src="jquery-latest.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $("#responsecontainer").load("index.phtml");
+                    var refreshId = setInterval(function () {
+                        $("#responsecontainer").load("index.phtml");
+                    }, 2000);
+                    $.ajaxSetup({
+                        cache: false
+                    });
+                });
+            </script>
+
+            <!--div id="responsecontainer">
+            </div-->
+
+        </head>
+        <!--script type="text/javascript">
+            var auto_refresh = setInterval(
+                    function ()
+                    {
+                        $('#load_donnees').load('ndex.phtml').fadeIn("slow");
+                    }, 10000); // rafraichis toutes les 10000 millisecondes
+    
+        </script-->
+        <body>
+
+            <div class="build" align="center">
+                <div class="contain_all">
+                    <div class="band_fixe">
+                        <div class="band_profil">
+                            <div class="profil">
+                                <?php foreach ($data as $value): ?>
+                                    <a href="profil"><img src="../public/image/<?php
+                                        if (!empty($value->img_profile)):echo $value->img_profile;
+                                        else: echo "default-user-man.png";
+                                        endif;
+
+                                        ?>" class="img-responsive" alt="profil-tof" width="100%" height="100%"></a>
+
+
+                                </div>
+                                <div class="nom_profil">
+                                    <?php echo $value->nom; ?>
+                                </div>
+                            <?php endforeach; ?>
+                            <div class="bando"> </div>
+                            <div class="menu_group">
+                                <div class="ibox">
+                                    <div class="panel panel-success">
+                                        <div class="panel-heading">RentHouse infos</div>
+                                        <div class="panel-body">
+                                            <ul class="nav nav-stacked" style="text-align: left;">
+                                                <li><a href="work"><i class="fa fa-home"></i>  Poster une maison</a></li>
+                                                <li><a href="work"><i class="fa fa-search-plus"></i>  Rechercher autre </a></li>
+                                                <li><a href="pub"><i class="fa fa-street-view"></i>  Business benin</a></li>
+                                                <li><a href="work"><i class="fa fa-bar-chart-o"></i>  Business Ghana</a></li>
+                                                <li><a href="work"><i class="fa fa-street-view"></i>  Business Togo</a></li>
+                                                <li><a href="work"><i class="fa fa-suitcase"></i>  Business Nigeria</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="band_publication">
+                        <div class="band_pub_head_fixe">
+                            <div class="band_pub_head">
+                                <div class="bar_search">
+                                    <form>
+                                        <span><input type="text" name=""  class="input" placeholder="searching..."><button type="submit" class="button"><i class="fa fa-search btn-md">Search</i></button></span>
+                                    </form>
+                                </div>
+                                <div class="acceuil"><a href="<?php echo $this->url->get('home/index'); ?>" class="lien"><i class="fa fa-home"></i> Acceuil</a></div>
+                                <div class="acceuil">
+                                    <select name="" style="background-color: #afd9ee;">
+                                        <option>Benin</option>
+                                        <option>Togo</option>
+                                        <option>Nigeria</option>
+                                        <option>Ghana</option>
+                                        <option>C&ocirc;te d&apos;ivoire</option>
+                                        <option>S&eacute;n&eacute;gale</option>
+
+                                    </select>
+
+                                </div>
+                                <!--code notification -->
+                                <!--div>
+                                    <nav class="collapse navbar-collapse" role="navigation">
+
+                                        <ul class="nav navbar-nav navbar-left">
+
+                                            <li class="dropdown navbar-notification">
+
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                    <i class="fa fa-bell navbar-notification-icon"></i>
+                                                    <span class="visible-xs-inline">&nbsp;Notifications</span>
+                                                    <b class="badge badge-primary">3</b>
+                                                </a>
+
+                                                <div class="dropdown-menu">
+
+                                                    <div class="dropdown-header">&nbsp;Notifications</div>
+
+                                                    <div class="notification-list">
+
+                                                        <a href="#" class="notification">
+                                                            <span class="notification-icon"><i class="fa fa-cloud-upload text-primary"></i></span>
+                                                            <span class="notification-title">Notification Title</span>
+                                                            <span class="notification-description">Praesent dictum nisl non est sagittis luctus.</span>
+                                                            <span class="notification-time">20 minutes ago</span>
+                                                        </a> 
+
+                                                        <a href="./page-notifications.html" class="notification">
+                                                            <span class="notification-icon"><i class="fa fa-ban text-secondary"></i></span>
+                                                            <span class="notification-title">Notification Title</span>
+                                                            <span class="notification-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</span>
+                                                            <span class="notification-time">20 minutes ago</span>
+                                                        </a> 
+
+                                                        <a href="./page-notifications.html" class="notification">
+                                                            <span class="notification-icon"><i class="fa fa-warning text-tertiary"></i></span>
+                                                            <span class="notification-title">Storage Space Almost Full!</span>
+                                                            <span class="notification-description">Praesent dictum nisl non est sagittis luctus.</span>
+                                                            <span class="notification-time">20 minutes ago</span>
+                                                        </a> 
+
+                                                        <a href="./page-notifications.html" class="notification">
+                                                            <span class="notification-icon"><i class="fa fa-ban text-danger"></i></span>
+                                                            <span class="notification-title">Sync Error</span>
+                                                            <span class="notification-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</span>
+                                                            <span class="notification-time">20 minutes ago</span>
+                                                        </a> 
+
+                                                    </div> 
+
+                                                    <a href="./page-notifications.html" class="notification-link">View All Notifications</a>
+
+                                                </div> 
+
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                <!--/div-->
+                                <!-- -->
+                                <div class="bar_logout"><a href="<?php echo $this->url->get('session/logout'); ?>" class="lien">Logout</a></div>
+                            </div>
+                        </div>
+
+
+                        <div class="band_pub_contain" id="responsecontainer">
+                            <?php
+                            // debut de code
+                            foreach ($house as $valhouse):
+                                $images = $valhouse->image;
+                                $image = explode(";", $images);
+                                $nbreimg = sizeof($image);
+                                // return var_dump($image);
+                                if ($nbreimg == 1) {
+
+                                    ?>
+
+                                    <!-- image unique code-->
+                                    <div class="cadreshowpublication">
+                                        <div class="proprio_pub">
+                                            <div class="im_pro">
+                                                <img src="../public/image/<?= $valhouse->getlogin()->img_profile ?>"  width="100%" height="100%">
+                                            </div>
+                                            <div class="lien_pro">
+                                                <a href="" class="lienpro"><?= $valhouse->getlogin()->nom . " " . $valhouse->getlogin()->prenom ?></a>  &agrave; publier le 20/05/2016
+                                            </div>
+                                        </div>
+                                        <div class="titre-unique">
+                                            <div class="titre"><a href="" class="titr_lien"><b><?= $valhouse->type_house; ?></b></a></div>
+                                        </div>
+                                        <div class="cadre_unique">
+                                            <a class=" ui-lightbox" href="../public/image/<?= $valhouse->image; ?>" title="">
+                                                <img src="../public/image/<?= $valhouse->image; ?>"   width="100%" height="100%">
+                                            </a>
+                                        </div>
+                                        <div class="descriptionAll">
+                                            <p><?= $valhouse->description; ?> xfnfx,fdf,hd,d,hdn sbbd c  dbdbdbdbdx  dbdxbdbdbd svdbd bdsbds bdbdbd sbdbds zggsgs sdgds sgdsgdsgs sgsdgsdg dsgds
+                                                gsd gds ds sd sdds gsdg dsg sgs ggdsgds gds gs gdgd dgg sd gs gg sdg dgd sg sdg dsgds dgdsgd  sgdfbs db sd bs db s dsgd sgd sg s
+                                                ggsg sg dsg ds gds ds gds ds ds d d hdh dshdhdhdh dhd hd hd h dhd dfdhdh dhdh dhdfh fdf hdhfdhfhdhd dh hhdh dhd hdhgd <a href="#">Lire la suite</a></p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="comment">
+                                        <div class="tof_commentetor"><img src="../public/image/default-user-man.png" width="100%" height="100%"></div>
+                                        <div class="text_commentetor">
+                                            <input type="text" class="comment_tof">
+                                        </div>
+                                        <div style="clear: both;">&nbsp;</div>
+                                    </div>
+                                    <!-- fincode-->
+                                    <?php
+                                }if ($nbreimg == 2) {
+                                    //return var_dump($image[1]);
+
+                                    ?>
+
+                                    <!--image double -->
+                                    <div class="cadreshowpublication">
+                                        <div class="proprio_pub">
+                                            <div class="im_pro">
+                                                <img src="../public/image/<?= $valhouse->getlogin()->img_profile ?>"  width="100%" height="100%">
+                                            </div>
+                                            <div class="lien_pro">
+                                                <a href="" class="lienpro"><?= $valhouse->getlogin()->nom . " " . $valhouse->getlogin()->prenom ?></a>  &agrave; publier le 20/05/2016
+                                            </div>
+                                        </div>
+                                        <div class="titre-unique">
+                                            <div class="titre"><a href="" class="titr_lien"><b>2 chambe 1 salon</b></a></div>
+                                        </div>
+                                        <div class="cadre_unique  ui-lightbox-gallery">
+                                            <div class="bloc1">
+                                                <a class="" href="../public/image/<?= $image[0]; ?>" title="">
+                                                    <img src="../public/image/<?= $image[0]; ?>" style="display: inline-block" width="100%" height="100%">
+                                                </a>
+                                            </div>
+                                            <div class="bloc1">
+                                                <a class="" href="../public/image/<?= $image[1]; ?>" title="">
+                                                    <img src="../public/image/<?= $image[1]; ?>"  style="display: inline-block" width="100%" height="100%">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="descriptionAll">
+                                            <p>xfnfx,fdf,hd,d,hdn sbbd c  dbdbdbdbdx  dbdxbdbdbd svdbd bdsbds bdbdbd sbdbds zggsgs sdgds sgdsgdsgs sgsdgsdg dsgds
+                                                gsd gds ds sd sdds gsdg dsg sgs ggdsgds gds gs gdgd dgg sd gs gg sdg dgd sg sdg dsgds dgdsgd  sgdfbs db sd bs db s dsgd sgd sg s
+                                                ggsg sg dsg ds gds ds gds ds ds d d hdh dshdhdhdh dhd hd hd h dhd dfdhdh dhdh dhdfh fdf hdhfdhfhdhd dh hhdh dhd hdhgd <a href="#">Lire la suite</a></p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="comment">
+                                        <div class="tof_commentetor"><img src="../public/image/default-user-man.png" width="100%" height="100%"></div>
+                                        <div class="text_commentetor">
+                                            <input type="text" class="comment_tof">
+                                        </div>
+                                        <div style="clear: both;">&nbsp;</div>
+                                    </div>
+                                    <!--fin code -->
+                                <?php } elseif ($nbreimg == 3) { ?>
+                                    <!--image triple -->
+                                    <div class="cadreshowpublication">
+                                        <div class="proprio_pub">
+                                            <div class="im_pro">
+                                                <img src="../public/image/<?= $valhouse->getlogin()->img_profile ?>"  width="100%" height="100%">
+                                            </div>
+                                            <div class="lien_pro">
+                                                <a href="" class="lienpro"><?= $valhouse->getlogin()->nom . " " . $valhouse->getlogin()->prenom ?></a>  &agrave; publier le 20/05/2016
+                                            </div>
+                                        </div>
+                                        <div class="titre-unique">
+                                            <div class="titre"><a href="" class="titr_lien"><b>1 chambe 1 salon</b></a></div>
+                                        </div>
+                                        <div class="cadre_unique ui-lightbox-gallery">
+                                            <div class="bloc1">
+                                                <a class="" href="../public/image/<?= $image[0]; ?>" title="">
+                                                    <img src="../public/image/<?= $image[0]; ?>"  style="display: inline-block" width="100%" height="100%">
+                                                </a>
+                                            </div>
+                                            <div class="bloc1">
+                                                <div class="tweece">
+                                                    <a class="" href="../public/image/<?= $image[1]; ?>" title="">
+                                                        <img src="../public/image/<?= $image[1]; ?>"  style="display: inline-block" width="100%" height="100%">
+                                                    </a>
+                                                </div>
+                                                <div class="tweece">
+                                                    <a class="" href="../public/image/<?= $image[2]; ?>" title="">
+                                                        <img src="../public/image/<?= $image[2]; ?>"  style="display: inline-block" width="100%" height="100%">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="descriptionAll">
+                                            <p>xfnfx,fdf,hd,d,hdn sbbd c  dbdbdbdbdx  dbdxbdbdbd svdbd bdsbds bdbdbd sbdbds zggsgs sdgds sgdsgdsgs sgsdgsdg dsgds
+                                                gsd gds ds sd sdds gsdg dsg sgs ggdsgds gds gs gdgd dgg sd gs gg sdg dgd sg sdg dsgds dgdsgd  sgdfbs db sd bs db s dsgd sgd sg s
+                                                ggsg sg dsg ds gds ds gds ds ds d d hdh dshdhdhdh dhd hd hd h dhd dfdhdh dhdh dhdfh fdf hdhfdhfhdhd dh hhdh dhd hdhgd <a href="#">Lire la suite</a></p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="comment">
+                                        <div class="tof_commentetor"><img src="../public/image/default-user-man.png" width="100%" height="100%"></div>
+                                        <div class="text_commentetor">
+                                            <input type="text" class="comment_tof">
+                                        </div>
+                                        <div style="clear: both;">&nbsp;</div>
+                                    </div>
+                                    <!--fin code -->
+                                <?php } elseif ($nbreimg > 3) { ?>
+                                    <!--image quadriple -->
+                                    <div class="cadreshowpublication">
+                                        <div class="proprio_pub">
+                                            <div class="im_pro">
+                                                <img src="../public/image/<?= $valhouse->getlogin()->img_profile ?>"  width="100%" height="100%">
+                                            </div>
+                                            <div class="lien_pro">
+                                                <a href="" class="lienpro"><?= $valhouse->getlogin()->nom . " " . $valhouse->getlogin()->prenom ?></a>  &agrave; publier le 20/05/2016
+                                            </div>
+                                        </div>
+                                        <div class="titre-unique">
+                                            <div class="titre"><a href="" class="titr_lien"><b>5 chambe 1 salon</b></a></div>
+                                        </div>
+                                        <div class="cadre_unique ui-lightbox-gallery">
+                                            <div class="bloc1">
+                                                <div class="tweece">
+                                                    <a class="" href="../public/image/<?= $image[0]; ?>" title="This image fits only horizontally.">
+                                                        <img src="../public/image/<?= $image[0]; ?>" style="display: inline-block" width="100%" height="100%">
+                                                    </a>
+                                                </div>
+                                                <div class="tweece">
+                                                    <a class="" href="../public/image/<?= $image[1]; ?>" title="This image fits only horizontally.">
+                                                        <img src="../public/image/<?= $image[1]; ?>"  style="display: inline-block" width="100%" height="100%">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="bloc1">
+                                                <div class="tweece">
+                                                    <a class="" href="../public/image/<?= $image[2]; ?>" title="This image fits only horizontally.">
+                                                        <img src="../public/image/<?= $image[2]; ?>"  style="display: inline-block" width="100%" height="100%">
+                                                    </a>
+                                                </div>
+                                                <div class="tweece">
+                                                    <a class="" href="../public/image/<?= $image[3]; ?>" title="This image fits only horizontally.">
+                                                        <img src="../public/image/<?= $image[3]; ?>"  style="display: inline-block" width="100%" height="100%">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="descriptionAll">
+                                            <p><?= $valhouse->description; ?> xfnfx,fdf,hd,d,hdn sbbd c  dbdbdbdbdx  dbdxbdbdbd svdbd bdsbds bdbdbd sbdbds zggsgs sdgds sgdsgdsgs sgsdgsdg dsgds
+                                                gsd gds ds sd sdds gsdg dsg sgs ggdsgds gds gs gdgd dgg sd gs gg sdg dgd sg sdg dsgds dgdsgd  sgdfbs db sd bs db s dsgd sgd sg s
+                                                ggsg sg dsg ds gds ds gds ds ds d d hdh dshdhdhdh dhd hd hd h dhd dfdhdh dhdh dhdfh fdf hdhfdhfhdhd dh hhdh dhd hdhgd <a href="#">Lire la suite</a></p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="comment">
+                                        <div class="tof_commentetor"><img src="../public/image/default-user-man.png" width="100%" height="100%"></div>
+                                        <div class="text_commentetor">
+                                            <input type="text" class="comment_tof">
+                                        </div>
+                                        <div style="clear: both;">&nbsp;</div>
+                                    </div>
+                                    <!--fin code -->
+                                <?php }endforeach; ?>
+                            <!--div class="contenu_a">
+                                <div class="proprio_pub">
+                                    <div class="im_pro">
+                                        <img src="<?php /* echo "../public/image/" . $valhouse->getlogin()->img_profile; ?>" width="100%" height="100%">
+                              </div>
+                              <div class="lien_pro">
+                              <a href="" class="lienpro"><?php echo $valhouse->getlogin()->nom . "  " . $valhouse->getlogin()->prenom; ?></a>  &agrave; publier le <?php
+                              $datB = $valhouse->time;
+                              $datA = time();
+                              echo date("d-m-Y   H:m:s", $datB);
+                             */
+
+                            ?>
+                                    </div>
+                                </div>
+                                <div class="contenu_ina">
+                                    <div class="album">
+                                        <a href="#modelesWindow" class="" data-toggle="modal">
+                                            <span><img src="<?php //echo "../public/image/" . $valhouse->image;         ?>" width="100%" height="100%"></span>
+                                        </a>
+                                    </div>
+                                    <div class="album">
+                                        <a href="#modelesWindow" class="" data-toggle="modal">
+                                            <img src="../public/image/h3.jpg" width="100%" height="100%">
+                                        </a>
+                                    </div>
+                                    <div class="album">
+                                        <a href="#modelesWindow" class="" data-toggle="modal">
+                                            <img src="../public/image/house.jpg" width="100%" height="100%">
+                                        </a>
+                                    </div>
+                                    <div class="description">
+                                        <div class="titre"><a href="" class="titr_lien"><b><? php$valhouse->type_house; ?></b></a></div>
+                                        <div class="texte">
+                                            <div class="panel-body">
+                            <?php //echo $valhouse->description . " nbre=>" . $nbreimg;  ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contenu_inb">
+                                    <div class="contenu_inb1">
+                                        <img src="../public/image/im.jpg" width="100%" height="100%">
+                                    </div>
+                                    <div class="contenu_inb1">
+                                        <img src="../public/image/(6).jpg" width="100%" height="100%">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comment">
+                                <div class="tof_commentetor"><img src="../public/image/default-user-man.png" width="100%" height="100%"></div>
+                                <div class="text_commentetor">
+                                    <input type="text" class="comment_tof">
+                                </div>
+                                <div style="clear: both;">&nbsp;</div>
+                            </div-->
+                            <?php //endforeach;  ?>      
+                        </div>
+
+                        <div class="band_left_pub_fixed">
+                            <div class="band_left_pub">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">Formations professionnel</div>
+                                    <div class="panel-body">
+
+                                    </div>
+
+                                </div>
+                                <div class="pub">
+                                    <div class="panel panel-success">
+                                        <div class="panel-heading">Divers publication</div>
+                                        <div class="panel-body">
+                                            <?php foreach ($data_pub as $pub): ?>
+                                                <div class="cadre_produit_publication">
+                                                    <div class="img_produit"><img  class="img-responsive" src="<?php echo "../public/image/" . $pub->photo; //$pub->getlogin()->img_profile;             ?>" width="100%" height="80%"></div>
+                                                    <div class="detail_produit">
+                                                        <p><?php echo substr($pub->libelDivers, 0, 137); ?><a href="#"> Lire la suite</a></p>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach; ?>
+                                            <div class="cadre_produit_publication">
+                                                <div class="img_produit"></div>
+                                                <div class="detail_produit">
+                                                    <p>Galaxy samsung tab4 Ã  vendre Ã  un prix forfetaire  40 0000 F.cfa. 
+                                                        pour cause de fin d'Ã©tude je met en vente mon martelat 3 place Ã  50 000 
+                                                        seulement</p>
+                                                </div>
+                                            </div>
+                                            <div class="cadre_produit_publication">
+                                                <div class="img_produit"></div>
+                                                <div class="detail_produit">
+                                                    <p>Galaxy samsung tab4 Ã  vendre Ã  un prix forfetaire  40 0000 F.cfa. 
+                                                        pour cause de fin d'Ã©tude je met en vente mon martelat 3 place Ã  50 000 
+                                                        seulement</p>
+                                                </div>
+                                            </div>
+                                            <div class="cadre_produit_publication">
+                                                <div class="img_produit"></div>
+                                                <div class="detail_produit">
+                                                    <p>Galaxy samsung tab4 Ã  vendre Ã  un prix forfetaire  40 0000 F.cfa. 
+                                                        pour cause de fin d'Ã©tude je met en vente mon martelat 3 place Ã  50 000 
+                                                        seulement</p>
+                                                </div>
+                                            </div>
+                                            <div class="cadre_produit_publication">
+                                                <div class="img_produit"></div>
+                                                <div class="detail_produit">
+                                                    <p>Galaxy samsung tab4 Ã  vendre Ã  un prix forfetaire  40 0000 F.cfa. 
+                                                        pour cause de fin d'Ã©tude je met en vente mon martelat 3 place Ã  50 000 
+                                                        seulement</p>
+                                                </div>
+                                            </div>
+                                            <div class="cadre_produit_publication">
+                                                <div class="img_produit"></div>
+                                                <div class="detail_produit">
+                                                    <p>Galaxy samsung tab4 Ã  vendre Ã  un prix forfetaire  40 0000 F.cfa. 
+                                                        pour cause de fin d'Ã©tude je met en vente mon martelat 3 place Ã  50 000 
+                                                        seulement</p>
+                                                </div>
+                                            </div>
+                                            <div class="cadre_produit_publication">
+                                                <div class="img_produit"></div>
+                                                <div class="detail_produit">
+                                                    <p>Galaxy samsung tab4 Ã  vendre Ã  un prix forfetaire  40 0000 F.cfa. 
+                                                        pour cause de fin d'Ã©tude je met en vente mon martelat 3 place Ã  50 000 
+                                                        seulement</p>
+                                                </div>
+                                            </div>
+                                            <div class="cadre_produit_publication">
+                                                <div class="img_produit"></div>
+                                                <div class="detail_produit">
+                                                    <p>Galaxy samsung tab4 Ã  vendre Ã  un prix forfetaire  40 0000 F.cfa. 
+                                                        pour cause de fin d'Ã©tude je met en vente mon martelat 3 place Ã  50 000 
+                                                        seulement</p>
+                                                </div>
+                                            </div>
+                                            <div class="cadre_produit_publication">
+                                                <div class="img_produit"></div>
+                                                <div class="detail_produit">
+                                                    <p>Galaxy samsung tab4 Ã  vendre Ã  un prix forfetaire  40 0000 F.cfa. 
+                                                        pour cause de fin d'Ã©tude je met en vente mon martelat 3 place Ã  50 000 
+                                                        seulement</p>
+                                                </div>
+                                            </div>
+                                            <div class="cadre_produit_publication">
+                                                <div class="img_produit"></div>
+                                                <div class="detail_produit">
+                                                    <p>Galaxy samsung tab4 Ã  vendre Ã  un prix forfetaire  40 0000 F.cfa. 
+                                                        pour cause de fin d'Ã©tude je met en vente mon martelat 3 place Ã  50 000 
+                                                        seulement</p>
+                                                </div>
+                                            </div>
+                                            <div class="cadre_produit_publication">
+                                                <div class="img_produit"></div>
+                                                <div class="detail_produit">
+                                                    <p>Galaxy samsung tab4 Ã  vendre Ã  un prix forfetaire  40 0000 F.cfa. 
+                                                        pour cause de fin d'Ã©tude je met en vente mon martelat 3 place Ã  50 000 
+                                                        seulement</p>
+                                                </div>
+                                            </div>
+                                            <div class="cadre_produit_publication">
+                                                <div class="img_produit"></div>
+                                                <div class="detail_produit">
+                                                    <p>Galaxy samsung tab4 Ã  vendre Ã  un prix forfetaire  40 0000 F.cfa. 
+                                                        pour cause de fin d'Ã©tude je met en vente mon martelat 3 place Ã  50 000 
+                                                        seulement</p>
+                                                </div>
+                                            </div>
+                                            <div class="cadre_produit_publication">
+                                                <div class="img_produit"></div>
+                                                <div class="detail_produit">
+                                                    <p>Galaxy samsung tab4 Ã  vendre Ã  un prix forfetaire  40 0000 F.cfa. 
+                                                        pour cause de fin d'Ã©tude je met en vente mon martelat 3 place Ã  50 000 
+                                                        seulement</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!--insertion du code popup -->
+                    <div id="modelesWindow" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">ModÃ¨le de message</h4>
+                                </div>
+                                <div class="modal-body">
+
+                                    <table class="table table-striped table-hover">
+                                        <tr>
+                                            <td id="smsmodel"><?php echo "bonjour"; ?></td>
+                                            <td>
+                                                <button type="button" data-idmodel=""  role="button" class="insertModel btn btn-success btn-xs">
+                                                    <span class ="fa fa-check"></span> Ins&eacute;rer
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Fermer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--fin du code popup -->
+
+
+                </div>
+
+            </div>
+
+            <script type="text/javascript" src="../<?php $this->url->getBaseUri(); ?>public/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="../<?php $this->url->getBaseUri(); ?>public/js/jquery-2.1.1.js"></script>
+            <script type="text/javascript" src="../<?php $this->url->getBaseUri(); ?>public/js/jquery.js"></script>
+            <script type="text/javascript" src="../<?php $this->url->getBaseUri(); ?>public/js/jquery-ui-1.10.4.min.js"></script>
+            <script type="text/javascript" src="../<?php $this->url->getBaseUri(); ?>public/js/inspinia.js"></script>
+            <script type="text/javascript" src="../<?php $this->url->getBaseUri(); ?>public/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+            <script type="text/javascript" src="../<?php $this->url->getBaseUri(); ?>public/js/application/smsbox.send.js"></script>
+            <script type="text/javascript" src="../<?php $this->url->getBaseUri(); ?>public/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+            <script type="text/javascript" src="../<?php $this->url->getBaseUri(); ?>public/js/plugins/pace/pace.min.js"></script>
+
+            <!-- intgration du code pour le popup -->
+            <script type="text/javascript" src="../<?php $this->url->getBaseUri(); ?>public/popup/js/jquery.js"></script>
+            <script type="text/javascript" src="../<?php $this->url->getBaseUri(); ?>public/popup/js/bootstrap.min.js"></script>
+
+            <script type="text/javascript" src="../<?php $this->url->getBaseUri(); ?>public/popup/js/jquery.slimscroll.min.js"></script>
+
+
+            <!-- Plugin JS -->
+            <script type="text/javascript" src="../<?php $this->url->getBaseUri(); ?>public/popup/js/jquery.magnific-popup.min.js"></script>
+            <!-- App JS -->
+            <script type="text/javascript" src="../<?php $this->url->getBaseUri(); ?>public/popup/js/mvpready-core.js"></script>
+            <script type="text/javascript" src="../<?php $this->url->getBaseUri(); ?>public/popup/js/mvpready-helpers.js"></script>
+            <script type="text/javascript" src="../<?php $this->url->getBaseUri(); ?>public/popup/js/mvpready-admin.js"></script>
+            <!-- fin de code -->
+
+        </body>
+
+    </html>
+

@@ -1,0 +1,73 @@
+<?php
+/*if (!isset($mail)) {
+    $mail = array();
+}*/
+?>
+<html>
+    <head>
+        <title>Rent house in all country in benin</title>
+        <script  src="<?php $this->url->getBaseUri(); ?>public/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/css/styles.css" type="text/css">
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/css/animate.css" type="text/css">
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/font/glyphicons-halflings-regular.svg" >
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/fontawesome/css/font-awesome.min.css" >
+    </head>
+    <body>
+        <form id="my_form" enctype="multipart/form-data" method="post" action="<?php echo $this->url->get('session/authentificate'); ?>">
+        <div class="container">
+            <div class="col-lg-12 col-md-12 col-sm-12 bar_head">
+                <div class="col-lg-3 col-md-3 col-sm-3 tile_name">
+                    RentHouse
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 search_global">
+                  
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 bar_left_profil">
+                <!--bar de profil gauche-->
+            </div>
+
+            <div class="col-lg-6  col-md-6  col-sm-6 bar_show_publication"> 
+                <!--band d'affichage des publications--> 
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Veuillez entrer votre identitifiant pour vous connectez!</div>
+                    <div class="panel-body">
+                        <table>
+                            <thead></thead>
+                            <tbody>
+                                <tr>
+                                    <td>Nom utilisateurs:</td>
+                                    <td><input type="text" class="form-control" name="user" value="<?php //echo $mail; ?>"></td>
+                                </tr>
+                                <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                                <tr>
+                                    <td>Mot de passe</td>
+                                    <td><input type="password" class="form-control" name="pwd"></td>
+                                </tr>
+                                <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td> <button type="submit" name="" class="btn btn-primary btn-sm">Connecter</button></td>
+                                </tr>
+                            </tbody>
+                            <tfoot></tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-12">
+<?php if (sizeof($this->flashSession->getMessages(NULL, false)) > 0): ?>
+                                    <div><p><?php $this->flashSession->output() ?></p></div>
+<?php endif; ?>
+                            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 bar_right_divers">
+                <!--band de publication des divers-->
+            </div>
+        </div>
+        </form>
+    </body>
+</html>

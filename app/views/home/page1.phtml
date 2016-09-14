@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>Rent house in all country in benin</title>
+        <script  src="<?php $this->url->getBaseUri(); ?>public/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/css/styles.css" type="text/css">
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/css/animate.css" type="text/css">
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/font/glyphicons-halflings-regular.svg" >
+        <link rel="stylesheet" href="../<?php $this->url->getBaseUri(); ?>public/fontawesome/css/font-awesome.min.css" >
+    </head>
+    <body>
+        <form id="my_form" enctype="multipart/form-data" method="post" action="<?php echo $this->url->get('home/authentificate'); ?>">
+        <div class="container">
+            <div class="col-lg-12 col-md-12 col-sm-12 bar_head">
+                <div class="col-lg-3 col-md-3 col-sm-3 tile_name">
+                    RentHouse
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 search_global">
+                    <!--span><input type="text" name="search" id="text-size"><button>Search <i class="fa fa-search"></i></button></span>&nbsp;
+                    <span>&nbsp;</span>
+                    <span>&nbsp;</span>
+                    <span><a href="">Accueil</a></span>&nbsp;
+                    <span>&nbsp;</span>&nbsp;
+                    <span>
+                        <select name="pays" style="background-color: #afd9ee;">
+                            <option>Benin</option>
+                            <option>Togo</option>
+                            <option>Nigeria</option>
+                            <option>Ghana</option>
+                            <option>C&ocirc;te d&apos;ivoire</option>
+                            <option>S&eacute;n&eacute;gale</option>
+                        </select>
+                    </span-->
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 bar_left_profil">
+                <!--bar de profil gauche-->
+            </div>
+
+            <div class="col-lg-6  col-md-6  col-sm-6 bar_show_publication"> 
+                <!--band d'affichage des publications--> 
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Veuillez entrer votre identitifiant pour vous connectez!</div>
+                    <div class="panel-body">
+                        <table>
+                            <thead></thead>
+                            <tbody>
+                                <tr>
+                                    <td>Nom utilisateurs:</td>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr>
+                                <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                                <tr>
+                                    <td>Mot de passe</td>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr>
+                                <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td> <button type="submit" name="" class="btn btn-primary btn-sm">Connecter</button></td>
+                                </tr>
+                            </tbody>
+                            <tfoot></tfoot>
+                        </table>
+                    </div>
+                </div>
+                 <!--div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTkwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9Ijk1IiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE5MHgxNDA8L3RleHQ+PC9zdmc+" alt="...">
+                                    </div>
+                                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                                    <div>
+                                        <span class="btn btn-default btn-file"><span class="fileinput-new">Choisir l&apos;image principale du produit</span>
+                                            <span class="fileinput-exists">Changer</span><input type="file" name="..."></span>
+                                        <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Supprimer</a>
+                                    </div>
+
+                                </div-->
+                
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 bar_right_divers">
+                <!--band de publication des divers-->
+            </div>
+        </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19 févr. 2016, 10:29:13
+    Author     : karth solution
+*/
+
+.bar_head{
+    height: 50px;
+    background-color: #269abc;
+}
+.bar_left_profil{
+   /* height: 600px;*/
+   /* background-color: gainsboro;*/
+}
+.bar_show_publication{
+   /* height: 1000px;*/
+    background-color: #ffffff;
+    margin-top: 20px;
+   
+}
+.bar_right_divers{
+   /* height: 500px;*/
+    margin-top: 20px;
+    float: right;
+   /* background-color: gainsboro;*/
+}
+.tile_name{
+    margin: 8px;
+    color: #ffffff;
+    font-family: cursive;
+    font-size: x-large;
+}
+.search_global{
+    margin: 8px;
+}
+#text-size{
+    width: 250px;
+}
